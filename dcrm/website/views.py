@@ -28,7 +28,7 @@ def logout_user(request):
 
 
 def register_user(request):
-    if request.method == "POST":
+    if request.method == "GET":
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
