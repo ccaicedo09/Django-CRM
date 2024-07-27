@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import SignUpForm
+from .forms import SignUpForm, AddCustomer
 from .models import Customers
 
 def home(request):
@@ -63,3 +63,16 @@ def delete_customer(request, pk):
         return redirect('home')
     else:
         return redirect('home')
+    
+def add_customer(request):
+    form = AddCustomer(request.POST or None)
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            if form.is_valid():
+                add_customer = form.save()
+                messages.success(request, "Customer has been added!")
+                return redirect('home')
+        return render(request, 'add_customer.html', {'form':form})  
+    else:
+        messages.success(request, "You must be logged in to view this page!")
+        return redirect('home') 
