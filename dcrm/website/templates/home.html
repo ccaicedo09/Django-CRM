@@ -23,7 +23,7 @@
     {% if customers %}
     {% for customer in customers %}
     <tr>
-      <td>{{ customer.id }}</td>
+      <td><a href="{% url 'customer' customer.id %}">{{ customer.id }}</a></td>
       <td>{{ customer.first_name }}</td>
       <td>{{ customer.last_name }}</td>
       <td>{{ customer.email }}</td>
