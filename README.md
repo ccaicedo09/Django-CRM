@@ -5,7 +5,7 @@ Basic CRM System made up with Django.
 Features:
 
 ➡️ Frontend - HTML and Bootstrap
-➡️ Backend - Django and MySQ# Django-CRM
+➡️ Backend - Django and MySQL Django-CRM
 
 ## Features
 
@@ -22,7 +22,7 @@ Features:
 
 ### Prerequisites
 
-- Python 3.x
+- Python 3.12.3
 - Django
 - MySQL
 
@@ -33,25 +33,31 @@ Features:
    git clone https://github.com/yourusername/django-crm.git
    cd django-crm
    ```
+   
 2. **Create a virtual environment**:
     ```bash
     python -m venv venv
     venv/Scripts/activate  # Only for Windows
     ```
+    
 3. **Install dependencies**:
     ```bash
     pip install -r requirements.txt
     ```
+    
 4. **Configure the database**:
     - Update the DATABASES setting in settings.py with your MySQL configuration.
+
 5. **Apply migrations**:
     ```bash
     python manage.py migrate
     ```
+    
 6. **Create a superuser**:
     ```bash
     python manage.py createsuperuser
     ```
+    
 7. **Run the development server**:
     ```bash
     python manage.py runserver
